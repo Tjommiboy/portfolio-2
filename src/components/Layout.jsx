@@ -1,20 +1,17 @@
-import React from "react";
-import { Link, Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import NavBar from "./NavBar";
 
 export default function Layout() {
   return (
-    <div>
-      <nav className="bg-blue-100 text-white p-4">
-        <ul className="flex space-x-4">
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-        </ul>
-      </nav>
-      <main>
+    <div className="flex min-h-screen">
+      {/* Sidebar */}
+      <aside className="w-64 bg-[var(--generic-1)] text-white p-6 flex flex-col space-y-4 sticky top-0 h-screen">
+        <h2 className="text-xl font-bold mb-6">My Portfolio</h2>
+        <NavBar />
+      </aside>
+
+      {/* Main Content */}
+      <main className="flex-grow p-6 bg-gray-100">
         <Outlet />
       </main>
     </div>
