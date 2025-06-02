@@ -5,8 +5,10 @@ import Projects from "../components/Projects";
 const Home = () => {
   return (
     <>
-      <Hero />
-      <Projects />
+      <div className="container mx-auto">
+        <Hero />
+        <Projects />
+      </div>
     </>
   );
 };

@@ -17,8 +17,8 @@ const NavBar = () => {
       {/* Sidebar - visible on desktop or when open on mobile */}
       <aside
         className={`bg-[var(--natural-6)] text-white p-4 transition-all duration-300 z-40
-        ${isSidebarOpen ? "flex" : "hidden"} md:flex
-        flex-col space-y-4 md:w-64 lg:w-64 md:h-screen sticky top-0`}
+    ${isSidebarOpen ? "flex" : "hidden"} md:flex
+    flex-col space-y-4 w-[12rem] md:h-screen sticky top-0`}
       >
         <h2 className="text-xl font-bold mb-4">My Portfolio</h2>
 

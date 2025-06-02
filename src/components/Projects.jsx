@@ -1,30 +1,33 @@
 import ProjectCard from "./ProjectCards";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-6 text-center">Project Evolution</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <h2 className="text-3xl font-bold mb-6 text-center text-[var(--natural-6)] ">
+        Project Evolution
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         <ProjectCard
-          title="Noroff Year 1: Blog App"
+          title="JavaScript Frameworks"
           description="My first CRUD app using vanilla JavaScript and REST APIs."
-          image="/images/blog-project.png"
+          image="../../public/images/DSC_6488.jpg"
           technologies="HTML, CSS, JS"
-          link="https://github.com/yourusername/blog-app"
+          link="javascript_frameworks"
         />
         <ProjectCard
-          title="Noroff Year 2: Social Media App"
+          title="Semester Project 2"
           description="React-based SPA with dynamic routing and state management."
-          image="/images/social-app.png"
+          image="../../public/images/DSC_6488.jpg"
           technologies="React, Tailwind, Vite"
-          link="https://github.com/yourusername/social-app"
+          link="Semester_Project"
         />
         <ProjectCard
-          title="Noroff Year 2: Social Media App"
-          description="React-based SPA with dynamic routing and state management."
-          image="/images/social-app.png"
-          technologies="React, Tailwind, Vite"
-          link="https://github.com/yourusername/social-app"
+          title="Exam Project 2"
+          description="Final exam,where we display all our skills summed up."
+          image="../../public/images/DSC_6488.jpg"
+          technologies="React, Tailwind, Vite, CSS, GitHub, REST API, JSON,Netlify,Figma"
+          link="Exam_Project"
         />
       </div>
     </div>
