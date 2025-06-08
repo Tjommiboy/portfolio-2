@@ -5,7 +5,7 @@ const Hero = () => {
         <div className="md:w-1/3 bg-amber-50/50  p-2 rounded flex items-center justify-center">
           <img
             className="rounded object-cover w-full h-auto"
-            src="../../public/images/Portrett.jpg"
+            src="/images/Portrett.jpg"
             alt="picture of Anand Chetty"
           />
         </div>

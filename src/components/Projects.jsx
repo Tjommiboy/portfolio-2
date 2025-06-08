@@ -14,21 +14,21 @@ const Projects = () => {
         <ProjectCard
           title="JavaScript Frameworks"
           description="Responsive eCommerce store using the Noroff Online Shop API"
-          image="../../public/images/JF_HP.jpeg"
+          image="/images/JF_HP.jpeg"
           technologies="React, Tailwind, Vite, CSS, GitHub, REST API, JSON,Netlify,Figma"
           link="javascript_frameworks"
         />
         <ProjectCard
           title="Semester Project 2"
           description="React-based SPA with dynamic routing and state management."
-          image="../../public/images/SemesterNotWorking1.png"
+          image="/images/SemesterNotWorking1.png"
           technologies="React, Tailwind, Vite, CSS, GitHub, REST API, JSON,Netlify,Figma"
           link="Semester_Project"
         />
         <ProjectCard
           title="Exam Project 2"
           description="Final exam,where we display all our skills summed up."
-          image="../../public/images/holidayz2.png"
+          image="images/holidayz2.png"
           technologies="React, Tailwind, Vite, CSS, GitHub, REST API, JSON,Netlify,Figma"
           link="Exam_Project"
         />
