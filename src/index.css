@@ -30,6 +30,8 @@
 
 body {
   background-color: var(--natural-7) !important;
+  background-image: url("images/DSC_7358-blackwhite.jpg");
+  background-size: cover;
 }
 
 .logo {

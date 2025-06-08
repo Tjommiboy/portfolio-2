@@ -4,11 +4,11 @@ const ProjectCard = ({ title, description, image, technologies, link }) => {
   const isExternal = link?.startsWith("http");
 
   const CardContent = () => (
-    <div className="bg-[var(--natural-4)] text-[var(--natural-6)] p-4 rounded shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer hover:bg-[var(--natural-2)] hover:text-[var(--natural-4)]">
+    <div className="bg-amber-50/50 text-[var(--natural-6)] p-4 rounded shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer hover:bg-[var(--natural-2)] hover:text-[var(--natural-4)]">
       <img
         src={image}
         alt={title}
-        className="rounded mb-2 w-full object-cover"
+        className="w-full h-48 object-cover rounded mb-2"
       />
       <h3 className="text-xl font-semibold mb-1 hover:text-[var(--natural-4)]">
         {title}

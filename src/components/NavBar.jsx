@@ -1,31 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavItem from "./NavItem";
 
 const NavBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    if (isSidebarOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSidebarOpen]);
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
     <>
-      {/* Hamburger toggle (mobile only) */}
-      <button
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="bg-gray-800 text-white px-3 py-1 rounded m-2 md:hidden fixed top-4 left-4 z-50 whitespace-nowrap"
-      >
-        {isSidebarOpen ? "✕" : "☰"}
-      </button>
+      {!isSidebarOpen && (
+        <div className="md:hidden p-1 z-50 sticky top-0">
+          <button
+            onClick={() => setIsSidebarOpen(true)}
+            className="bg-gray-700 text-[var(--natural-4)] px-3 py-1 rounded"
+          >
+            ☰
+          </button>
+        </div>
+      )}
 
-      {/* Sidebar - visible on desktop or when open on mobile */}
       <aside
-        className={`bg-[var(--natural-6)] text-white p-4 transition-all duration-300 z-40
-    ${isSidebarOpen ? "flex" : "hidden"} md:flex
-    flex-col space-y-4 w-[12rem] md:h-screen sticky top-0`}
+        ref={sidebarRef}
+        className={`bg-[var(--natural-6)] text-[var(--natural-4)] p-4 transition-all duration-300 z-40
+        ${isSidebarOpen ? "block" : "hidden"} md:block
+        sticky top-0 md:h-screen md:w-[14rem] w-[90%] max-w-[230px] space-y-4`}
       >
-        <h2 className="text-xl font-bold mb-4">My Portfolio</h2>
+        {isSidebarOpen && (
+          <div className="md:hidden flex">
+            <button
+              onClick={closeSidebar}
+              className="bg-gray-700 text-[var(--natural-4)] px-3 py-1 rounded"
+            >
+              ✕
+            </button>
+          </div>
+        )}
 
+        <h2 className="text-xl text-[var(--natural-4)] font-bold mb-4">
+          My Portfolio
+        </h2>
         <nav className="flex flex-col space-y-2">
-          <NavItem to="/" label="Home" />
-          <NavItem to="/About" label="About Me" />
-          <NavItem to="/Contact" label="Contact" />
+          <NavItem to="/" label="Home" onClick={closeSidebar} />
+          <NavItem to="/About" label="About Me" onClick={closeSidebar} />
+          <NavItem to="/Contact" label="Contact" onClick={closeSidebar} />
         </nav>
       </aside>
     </>
