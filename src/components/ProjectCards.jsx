@@ -14,6 +14,7 @@ const ProjectCard = ({ title, description, image, technologies, link }) => {
         {title}
       </h3>
       <p className="text-sm text-[var(--generic-8)] mb-2">{description}</p>
+
       <p className="text-xs">Tech: {technologies}</p>
     </div>
   );

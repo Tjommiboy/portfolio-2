@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { projectData } from "../projectData/projectData";
+
 const ProjectPage = () => {
   const { projectId } = useParams();
 
@@ -10,13 +11,18 @@ const ProjectPage = () => {
   }
 
   return (
-    <div className=" container mx-auto p-4 bg-amber-50/30 rounded text-[var(--natural-6)]">
+    <div className="container mx-auto p-4 bg-amber-50/30 rounded text-[var(--natural-6)]">
       <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
 
       <div className="flex flex-col xl:flex-row gap-4">
+        {/* Text Content */}
         <div className="flex-1">
           <p className="mb-2">{project.description}</p>
-
+          {project.reflections.split("\n\n").map((para, idx) => (
+            <p key={idx} className="mb-4">
+              {para}
+            </p>
+          ))}
           <div className="flex gap-2">
             <a
               href={project.repo}
@@ -37,18 +43,21 @@ const ProjectPage = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2  gap-4">
+        {/* Image Grid */}
+        <div className="grid grid-cols-2 gap-4 xl:w-1/2 self-start">
           {project.images.map((src, index) => (
             <img
               key={index}
               src={src}
               alt={`${project.title} Screenshot ${index + 1}`}
-              className="w-full h-60 object-fit rounded shadow-xl bg-amber-50"
+              className="w-full h-60 object-cover rounded shadow-xl bg-amber-50"
             />
           ))}
         </div>
       </div>
-      <h2>Built with:</h2>
+
+      {/* Tech Stack */}
+      <h2 className="mt-6 text-xl font-semibold">Built with:</h2>
       <section className="flex p-4">
         <ul className="flex flex-wrap gap-4 p-0 list-none">
           {project.techStack.map((tech) => (
