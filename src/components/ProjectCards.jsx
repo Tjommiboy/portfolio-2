@@ -8,7 +8,7 @@ const ProjectCard = ({ title, description, image, technologies, link }) => {
       <img
         src={image}
         alt={title}
-        className="w-full h-48 object-cover rounded mb-2"
+        className="w-full h-48 object-fill rounded mb-2"
       />
       <h3 className="text-xl font-semibold mb-1 hover:text-[var(--natural-4)]">
         {title}

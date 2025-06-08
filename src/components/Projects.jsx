@@ -21,7 +21,7 @@ const Projects = () => {
         <ProjectCard
           title="Semester Project 2"
           description="React-based SPA with dynamic routing and state management."
-          image="/images/SemesterNotWorking1.png"
+          image="/images/SemesterNotWorking (1).jpeg"
           technologies="React, Tailwind, Vite, CSS, GitHub, REST API, JSON,Netlify,Figma"
           link="Semester_Project"
         />
